@@ -1,0 +1,39 @@
+﻿@using WeatherDotGov.Models
+@model CurrentWeatherPart
+
+<fieldset>
+  <legend>NOAA Weather.gov Widget Properties</legend>
+  
+  <p>
+    The URL field below should only be changed if the NOAA weather.gov XML URL changes. The URL has a single placeholder. The placeholder is used for the location code (generally a 'K' followed by 
+    the nearest airport code; ie: 'KJFK'). The Weather.gov XML feeds only update once an hour. Therefore, it's recommended that you set your cache time to 60 minutes or greater.<br /><br />
+  </p><br />
+
+  <div class="editor-label">
+    <label for="Url">@T("Weather.gov XML URL")</label>
+    <span style="color: #666666; font-size: 0.9em;">For example: http://www.weather.gov/xml/current_obs/{0}.xml</span>
+  </div>
+  <div class="editor-field">
+    @Html.TextBoxFor(model => model.Url)
+    @Html.ValidationMessageFor(model => model.Url)
+  </div><br />
+            
+  <div class="editor-label">
+    <label for="Location">@T("Location")</label>
+    <span style="color: #666666; font-size: 0.9em;">For example: See above. <a href="http://www.weather.gov/xml/current_obs/" target="_blank">Click here for a complete listing.</a></span>
+  </div>
+  <div class="editor-field">
+    @Html.TextBoxFor(model => model.Location)
+    @Html.ValidationMessageFor(model => model.Location)
+  </div><br />
+
+  <div class="editor-label">
+    <label for="MinutesToCache">@T("Cache Time (in minutes)")</label>
+    <span style="color: #666666; font-size: 0.9em;">For example: 60 minutes. This is the number of minutes to save the weather results before downloading again.</span>
+  </div>
+  <div class="editor-field">
+    @Html.TextBoxFor(model => model.MinutesToCache)
+    @Html.ValidationMessageFor(model => model.MinutesToCache)
+  </div><br />
+            
+</fieldset>
