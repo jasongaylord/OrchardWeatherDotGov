@@ -1,0 +1,7 @@
+﻿<div id="CurrentWeatherDotGov">
+    <h3>@Model.WeatherResults.CurrentConditions.temp_f&deg;F</h3>
+    @Model.WeatherResults.CurrentConditions.weather<br />
+    Feels Like: @Model.WeatherResults.CurrentConditions.windchill_f&deg;F<br />
+    Wind: @Model.WeatherResults.CurrentConditions.wind_string<br />
+    <span style="font-size: 0.8em; color: #999999;">As of @Model.WeatherResults.TimeCached UTC</span>
+</div>
